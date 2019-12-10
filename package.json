@@ -42,5 +42,6 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "homepage": "https://patricklevy.github.io/levy-website-gatsby"
 }

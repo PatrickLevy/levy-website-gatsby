@@ -8,11 +8,12 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Component1 from "../components/component1"
 
-const IndexPage = ({ location }) => (
+const Left = ({ location }) => (
   <Layout location={location}>
     <SEO title="Home" />
-    <Component1/>
+    Left
+    <AniLink swipe direction="up" to="/">Page 2</AniLink>
   </Layout>
 )
 
-export default IndexPage
+export default Left

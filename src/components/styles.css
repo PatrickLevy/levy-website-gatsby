@@ -1,0 +1,15 @@
+.aboutMeWrapper {
+  /* border: solid black; */
+  text-align: center;
+}
+
+.aboutMeWrapper .backArrow {
+  color: black;
+  position: absolute;
+  left: 55px;
+}
+
+.aboutMeWrapper .summary {
+  margin: 40px;
+  padding: 0 20px;
+}

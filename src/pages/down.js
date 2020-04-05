@@ -8,11 +8,11 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Component1 from "../components/component1"
 
-const IndexPage = ({ location }) => (
+const Down = ({ location }) => (
   <Layout location={location}>
     <SEO title="Home" />
-    <Component1/>
+    Down
   </Layout>
 )
 
-export default IndexPage
+export default Down

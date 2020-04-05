@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Patrick Levy`,
+    title: ``,
     description: `Welcome to my profile page. I'm mostly just using this to play around with GatsbyJS.`,
     author: `mrpatricklevy@gmail.com`,
   },
@@ -30,6 +30,7 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-transition-link`
   ],
   pathPrefix: "/levy-website-gatsby",
 }

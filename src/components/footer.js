@@ -1,4 +1,5 @@
 import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import PropTypes from "prop-types"
 import React from "react"
 import { colors } from "./constants"
@@ -16,7 +17,7 @@ const Footer = ({ siteTitle }) => (
         padding: `0 1.5rem`,
       }}
     >
-      © {new Date().getFullYear()}, <Link to="/about-me/">Patrick Levy</Link>
+      © {new Date().getFullYear()}, <AniLink paintDrip hex={colors.border} to="/about-me/">Patrick Levy</AniLink>
     </div>
   </footer>
 )

@@ -34,6 +34,12 @@ const Layout = ({ children, location }) => {
     color: 'black'
   }
 
+  const basePath = (location.href || '').indexOf('http://localhost') > -1 ? '/' : '/levy-website-gatsby/'
+
+  const SHOW_NAV_BUTTONS = false
+  
+  
+
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
@@ -54,16 +60,16 @@ const Layout = ({ children, location }) => {
         }}
       >
         {
-          ['/', '/down'].includes(currentPath) && (
+          SHOW_NAV_BUTTONS && [basePath, `${basePath}down`, `${basePath}down/`].includes(currentPath) && (
             <AniLink
               style={{
                 position: `absolute`,
-                top: `-20px`,
+                top: `-5px`,
                 left: `46%`,
                 zIndex: 10
               }}
               swipe direction="down"
-              to={currentPath === '/down' ? '/' : '/up'}
+              to={currentPath === `${basePath}down` ? '/' : '/up'}
             >
               <i style={navigagatorIconStyle} className="fas fa-angle-up fa-5x" />
             </AniLink>
@@ -71,16 +77,16 @@ const Layout = ({ children, location }) => {
         }
 
         {
-          ['/', '/up'].includes(currentPath) && (
+          SHOW_NAV_BUTTONS && [basePath, `${basePath}up`, `${basePath}up/`].includes(currentPath) && (
             <AniLink
               style={{
                 position: `absolute`,
-                bottom: `5px`,
+                bottom: `22px`,
                 left: `46%`,
                 zIndex: 10
               }}
               swipe direction="up"
-              to={currentPath === '/up' ? '/' : '/down'}
+              to={currentPath === `${basePath}up` ? '/' : '/down'}
             >
               <i style={navigagatorIconStyle} className="fas fa-angle-down fa-5x" />
             </AniLink>
@@ -88,16 +94,16 @@ const Layout = ({ children, location }) => {
         }
         
         {
-          ['/', '/left'].includes(currentPath) && (
+          SHOW_NAV_BUTTONS && [basePath, `${basePath}left`, `${basePath}left/`].includes(currentPath) && (
             <AniLink
               style={{
                 position: `absolute`,
                 top: `45%`,
-                right: `5px`,
+                right: `18px`,
                 zIndex: 10
               }}
               swipe direction="left"
-              to={currentPath === '/left' ? '/' : '/right'}
+              to={currentPath === `${basePath}left` ? '/' : '/right'}
             >
               <i style={navigagatorIconStyle} className="fas fa-angle-right fa-5x" />
             </AniLink>
@@ -105,16 +111,16 @@ const Layout = ({ children, location }) => {
         }
         
         {
-          ['/', '/right'].includes(currentPath) && (
+          SHOW_NAV_BUTTONS && [basePath, `${basePath}right`, `${basePath}right/`].includes(currentPath) && (
             <AniLink
               style={{
                 position: `absolute`,
                 top: `45%`,
-                left: `5px`,
+                left: `18px`,
                 zIndex: 10
               }}
               swipe direction="right"
-              to={currentPath === '/right' ? '/' : '/left'}
+              to={currentPath === `${basePath}right` ? '/' : '/left'}
             >
               <i style={navigagatorIconStyle} className="fas fa-angle-left fa-5x" />
             </AniLink>

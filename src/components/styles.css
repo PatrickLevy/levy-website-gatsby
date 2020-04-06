@@ -6,10 +6,27 @@
 .aboutMeWrapper .backArrow {
   color: black;
   position: absolute;
-  left: 55px;
+  left: 5%;
+  top: 35px;
 }
 
 .aboutMeWrapper .summary {
   margin: 40px;
-  padding: 0 20px;
+  padding: 0 5%;
+
+  max-height: calc(100vh - 400px);
+  overflow: auto;
+}
+
+.aboutMeWrapper .fa-github {
+  color: #1B1F23;
+  margin-right: 50px
+}
+
+.aboutMeWrapper .fa-linkedin {
+  color: #0077B5;
+}
+
+.aboutMeWrapper .socialLinks {
+  margin-top: 50px;
 }

@@ -9,7 +9,7 @@ import { colors } from "../components/constants"
 
 const AboutMe = ({location}) => (
   <Layout location={location}>
-    <SEO title="About Me" />
+    <SEO title="Patrick Levy" />
     <div className="aboutMeWrapper">
       <AniLink paintDrip hex={colors.border} to="/">
         <i className="fa fa-angle-double-left fa-3x backArrow"/>

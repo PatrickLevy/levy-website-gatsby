@@ -10,7 +10,7 @@ import Component1 from "../components/component1"
 
 const IndexPage = ({ location }) => (
   <Layout location={location}>
-    <SEO title="Home" />
+    <SEO title="Patrick Levy" />
     <Component1/>
   </Layout>
 )

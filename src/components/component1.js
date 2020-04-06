@@ -87,10 +87,9 @@ class Component1 extends React.Component {
   render () {
     return (
       <div>
-      <SEO title="Page two" />
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <canvas id="myCanvas" height="450" width="450"></canvas>
-      </div>
+        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+          <canvas id="myCanvas" height="450" width="450"></canvas>
+        </div>
     </div>
     )
   }

@@ -1,6 +1,7 @@
 .aboutMeWrapper {
   /* border: solid black; */
   text-align: center;
+  padding-top: 20px;
 }
 
 .aboutMeWrapper .backArrow {
@@ -16,6 +17,7 @@
 
   max-height: calc(100vh - 245px);
   overflow: auto;
+  text-align: left;
 }
 
 .aboutMeWrapper .fa-github {

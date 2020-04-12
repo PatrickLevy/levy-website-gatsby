@@ -5,91 +5,147 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../components/image"
 
+const canvasWidth = () => (window.innerWidth - 40);
+const canvasHeight = () => (window.innerHeight - 70);
+
+const radiusOfShape = (shape) => (100)// (25 + 100 * Math.abs(Math.cos(shape.angle)))
+
+const distanceBetweenTwoPoints = (shape1, shape2) => {
+  const dx = shape2.x - shape1.x
+  const dy = shape2.y - shape1.y
+  return Math.sqrt(dx * dx + dy * dy)
+}
+
 class Component1 extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { angle: 0, animate: true }
+    this.state = {
+      angle: 0,
+      animate: true,
+      shape1: {
+        angle: 30,
+        x: 200,
+        y: 325,
+        xVelocity: 5,
+        yVelocity: -8,
+        color: '#F71E54'
+      },
+      shape2: {
+        angle: 30,
+        x: 275,
+        y: 300,
+        xVelocity: 5,
+        yVelocity: 3,
+        color: '#006699'
+      }
+    }
   }
   componentDidMount () {
-    this.drawCircle()
-    // this.startAnimation()
-    
+    this.animate()
   }
   componentWillUnmount () {
     this.state = { animate: false }
-
-    // call window.cancelAnimationFrame(id) with the id on the ?
   }
 
-  // startAnimation () {
-  //   console.log('this.state', this.state)
-  //   if (this.state.animate) {
-  //     var mainCanvas = document.querySelector("#myCanvas");
-  //     var mainContext = mainCanvas.getContext("2d");
-      
-  //     var canvasWidth = mainCanvas.width;
-  //     var canvasHeight = mainCanvas.height;
-
-  //     var requestAnimationFrame = window.requestAnimationFrame || 
-  //                             window.mozRequestAnimationFrame || 
-  //                             window.webkitRequestAnimationFrame || 
-  //                             window.msRequestAnimationFrame;
-
-  //     // color in the background
-  //     mainContext.fillStyle = "#EEEEEE";
-  //     mainContext.fillRect(0, 0, canvasWidth, canvasHeight);
-
-  //     this.drawCircle()
-
-  //     // requestAnimationFrame(() => this.drawCircle())
-  //   }
-  // }
-
-  drawCircle () {
+  animate () {
     if (this.state.animate) {
-      var mainCanvas = document.querySelector("#myCanvas");
-      var mainContext = mainCanvas.getContext("2d");
-      var canvasWidth = mainCanvas.width;
-      var canvasHeight = mainCanvas.height;
+      let mainCanvas = document.querySelector("#myCanvas");
+      let mainContext = mainCanvas.getContext("2d");
 
       // color in the background
       mainContext.fillStyle = "#EEEEEE";
-      mainContext.fillRect(0, 0, canvasWidth, canvasHeight);
+      mainContext.fillRect(0, 0, canvasWidth(), canvasHeight());
 
-      var requestAnimationFrame = window.requestAnimationFrame || 
+      let requestAnimationFrame = window.requestAnimationFrame || 
                                 window.mozRequestAnimationFrame || 
                                 window.webkitRequestAnimationFrame || 
                                 window.msRequestAnimationFrame;
-      
-      let angle = this.state.angle
 
-      // clear the old circle
-      mainContext.clearRect(0, 0, canvasWidth, canvasHeight);
-      
-      // draw the circle
-      mainContext.beginPath();
+      // clear the old canvas
+      mainContext.clearRect(0, 0, canvasWidth(), canvasHeight());
 
-      var radius = 25 + 150 * Math.abs(Math.cos(this.state.angle));
-      
-      mainContext.arc(225, 225, radius, 0, Math.PI * 2, false);
-      mainContext.closePath();
-      
-      // color in the circle
-      mainContext.fillStyle = "#006699";
-      mainContext.fill();
+      this.drawCircle(mainContext, 'shape1');
+      this.drawCircle(mainContext, 'shape2');
 
-      this.setState({ angle: angle += Math.PI / 64 });
-
-      requestAnimationFrame(() => this.drawCircle())
+      requestAnimationFrame(() => this.animate());
     }
     
+  }
+  
+  drawCircle (mainContext, shapeId) {
+    let shape = this.state[shapeId]
+
+    // draw the circle
+    mainContext.beginPath();
+
+    let radius = radiusOfShape(shape);
+    
+    mainContext.arc(shape.x, shape.y, radius, 0, Math.PI * 2, false);
+    mainContext.closePath();
+    
+    // color in the circle
+    mainContext.fillStyle = shape.color;
+    mainContext.fill();
+
+    // update the shape for next time
+    shape.angle = shape.angle += Math.PI / 640
+    
+
+    // Check X velocity 
+    const shapeIsAtRightSide = (shape.x > 0 && canvasWidth() < (shape.x + radius))
+    const shapeIsAtLeftSide = ((shape.x - radius) < 0)
+    if (shapeIsAtRightSide && shape.xVelocity > 0) {
+      shape.xVelocity = shape.xVelocity * -1
+    } else if (shapeIsAtLeftSide && shape.xVelocity < 0) {
+      shape.xVelocity = shape.xVelocity * -1
+    }
+    shape.x = shape.x + shape.xVelocity;
+
+    // Check Y velocity and reverse it only if it as at an edge and the velocity hasn't been reversed yet
+    const shapeIsAtBottom = (shape.y > 0 && canvasHeight() < (shape.y + radius))
+    const shapeIsAtTop = ((shape.y - radius) < 0)
+    if (shapeIsAtBottom && shape.yVelocity > 0) {
+      shape.yVelocity = shape.yVelocity * -1
+    } else if (shapeIsAtTop && shape.yVelocity < 0) {
+      shape.yVelocity = shape.yVelocity * -1
+    }
+    shape.y = shape.y + shape.yVelocity;
+
+    this.setState({ [shapeId]: shape })
+
+
+    // Check if the two balls have collided
+    const shape1 = this.state.shape1;
+    const shape2 = this.state.shape2;
+    const distanceBetweenCenters = distanceBetweenTwoPoints(shape1, shape2)
+    if (distanceBetweenCenters < (radiusOfShape(shape1) + radiusOfShape(shape2))) {
+
+        shape1.xVelocity = shape1.xVelocity * -1
+        shape2.xVelocity = shape2.xVelocity * -1
+
+        shape1.yVelocity = shape1.yVelocity * -1
+        shape2.yVelocity = shape2.yVelocity * -1
+      
+      // If they have opposite directions (not reversed yet), reverse them
+      // if (shape1.xVelocity * shape2.xVelocity < 0) {
+      //   shape1.xVelocity = shape1.xVelocity * -1
+      //   shape2.xVelocity = shape2.xVelocity * -1
+      // }
+      
+      // if (shape1.yVelocity * shape2.yVelocity < 0) {
+      //   shape1.yVelocity = shape1.yVelocity * -1
+      //   shape2.yVelocity = shape2.yVelocity * -1
+      // }
+      
+
+      this.setState({ shape1, shape2 })
+    }
+
   }
   render () {
     return (
       <div>
-        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-          <canvas id="myCanvas" height="450" width="450"></canvas>
-        </div>
+        <canvas id="myCanvas" height={canvasHeight()} width={canvasWidth()}></canvas>
     </div>
     )
   }

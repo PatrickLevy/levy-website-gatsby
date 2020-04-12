@@ -48,7 +48,7 @@ const Layout = ({ children, location }) => {
           margin: `0px`,
           // maxWidth: 960,
           padding: `0 0 1.45rem`,
-          paddingTop: 20,
+          // paddingTop: 20,
           height: `calc(100vh - ${heights.header + heights.footer}px)`,
           borderLeft: `solid ${colors.border} 20px`,
           borderRight: `solid ${colors.border} 20px`,

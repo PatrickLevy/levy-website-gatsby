@@ -18,17 +18,19 @@ const AboutMe = ({location}) => (
       <section className="summary">
         <p>
           I'm a software developer in Saint Paul, MN.
-          I have taken a rather roundabout journey during the course of my career so far, but I have loved every stop along the way.
-          I have worked in analytical chemistry, taught high school, and am now the happiest I've ever been immersed in a world of code.
+          My career has taken a rather roundabout journey but I have loved every stop along the way.
+          I have worked in analytical chemistry, taught high school, and am now a software developer working in industrial IoT.
         </p>
-        {/* <p>
+        <p>
+          School has always been enjoyable to me.
           I have bachelor's degrees in Chemistry and Computer Science and a master's degree in secondary science education.
-        </p> */}
+        </p>
         <p>
           I probably most enjoy writing JavaScript for the frontend and am well versed in React, Vue, and GraphQL.
-          I have also enjoyed working in React Native, Python, Ruby, and GoLang.
+          I have also enjoyed dabbling in React Native, Python, Ruby, and GoLang.
         </p>
         <p>
+          I consider myself a bit of a maker and enjoy small side projects as a way to keep learning new skills.
           You can visit a project that I have been working on for teaching high school chemistry at <a href="https://www.grokchemistry.com" target="_blank">www.grokchemistry.com</a>.
         </p>
       </section>

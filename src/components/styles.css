@@ -1,7 +1,9 @@
 .aboutMeWrapper {
   /* border: solid black; */
-  text-align: center;
-  padding-top: 20px;
+  /* text-align: center; */
+  /* padding-top: 40px; */
+  /* margin: 40px 10px 10px 10px; */
+  padding: 10px 5%;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -13,8 +15,8 @@
 }
 
 .aboutMeWrapper .summary {
-  margin: 10px;
-  padding: 0 5%;
+  /* margin: 10px;
+  padding: 0 5%; */
 
   max-height: calc(100vh - 245px);
   overflow: auto;
@@ -32,14 +34,16 @@
 }
 
 .socialLinks {
+  /* top: 20px;
   position: relative;
-  bottom: 5%;
-  left: calc(50% - 86px);
+  left: calc(50% - 140px); */
+  margin-left: calc(50% - 125px);
 }
 
-.aboutMeWrapper .socialLinks {
+/* .aboutMeWrapper .socialLinks {
+  bottom: 5%;
   position: absolute;
-}
+} */
 
 .aboutMeWrapper .fa-github {
   color: black;
@@ -52,6 +56,8 @@
   text-align: left;
   color: white;
   margin: 30px;
+  /* background: black; */
+  z-index: 1000;
 
 }
 

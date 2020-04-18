@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../components/image"
 const runningTime = 5000;
-const stopAnimationTime = 20000;
+const stopAnimationTime = 30000;
 const canvasWidth = () => (typeof window !== 'undefined' ? window.innerWidth - 40 : 200);
 const canvasHeight = () => (typeof window !== 'undefined' ? window.innerHeight - 70 : 200);
 
@@ -294,7 +294,7 @@ class Component1 extends React.Component {
                   I have also enjoyed dabbling in React Native, Python, Ruby, and GoLang.
                 </p>
                 <p>
-                  I consider myself a bit of a maker and enjoy small side projects as a way to keep learning new skills.
+                  I consider myself a bit of a maker and enjoy side projects as a way to keep learning new skills.
                   You can visit a project that I have been working on for teaching high school chemistry at <a href="https://www.grokchemistry.com" target="_blank">www.grokchemistry.com</a>.
                 </p>
               </section>

@@ -56,7 +56,7 @@ const Layout = ({ children, location }) => {
           borderBottom: `solid ${colors.border} 20px`,
           borderRadius: `53px`,
           overflow: `scroll`,
-          background: `white`
+          background: `black`
         }}
       >
         {

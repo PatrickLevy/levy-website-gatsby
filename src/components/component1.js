@@ -287,11 +287,11 @@ class Component1 extends React.Component {
                 </p>
                 <p>
                   School has always been enjoyable to me.
-                  I have bachelor's degrees in Chemistry and Computer Science and a master's degree in secondary science education.
+                  I have bachelor's degrees in Chemistry and Computer Science and a master's degree in Secondary Science Education.
                 </p>
                 <p>
                   I probably most enjoy writing JavaScript for the frontend and am well versed in React, Vue, and GraphQL.
-                  I have also enjoyed dabbling in React Native, Python, Ruby, and GoLang.
+                  I also enjoy dabbling in React Native, Python, Ruby, and GoLang.
                 </p>
                 <p>
                   I consider myself a bit of a maker and enjoy side projects as a way to keep learning new skills.

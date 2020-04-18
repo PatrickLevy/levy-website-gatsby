@@ -5,8 +5,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Image from "../components/image"
 
-const canvasWidth = () => (window.innerWidth - 40);
-const canvasHeight = () => (window.innerHeight - 70);
+const canvasWidth = () => (typeof window !== 'undefined' ? window.innerWidth - 40 : 200);
+const canvasHeight = () => (typeof window !== 'undefined' ? window.innerHeight - 70 : 200);
 
 const radiusOfShape = (shape) => (100)// (25 + 100 * Math.abs(Math.cos(shape.angle)))
 
@@ -24,16 +24,16 @@ class Component1 extends React.Component {
       animate: true,
       shape1: {
         angle: 30,
-        x: 200,
+        x: 100,
         y: 325,
-        xVelocity: 5,
-        yVelocity: -8,
+        xVelocity: -5,
+        yVelocity: 8,
         color: '#F71E54'
       },
       shape2: {
         angle: 30,
-        x: 275,
-        y: 300,
+        x: 500,
+        y: 500,
         xVelocity: 5,
         yVelocity: 3,
         color: '#006699'
@@ -143,6 +143,9 @@ class Component1 extends React.Component {
 
   }
   render () {
+    if (typeof window == 'undefined' ) {
+      return null;
+    }
     return (
       <div>
         <canvas id="myCanvas" height={canvasHeight()} width={canvasWidth()}></canvas>

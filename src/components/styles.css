@@ -2,6 +2,7 @@
   /* border: solid black; */
   text-align: center;
   padding-top: 20px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .aboutMeWrapper .backArrow {
@@ -20,17 +21,58 @@
   text-align: left;
 }
 
-.aboutMeWrapper .fa-github {
-  color: #1B1F23;
+.fa-github {
+  /* color: #1B1F23; */
+  color: white;
   margin-right: 50px
 }
 
-.aboutMeWrapper .fa-linkedin {
+.fa-linkedin {
   color: #0077B5;
+}
+
+.socialLinks {
+  position: relative;
+  bottom: 5%;
+  left: calc(50% - 86px);
 }
 
 .aboutMeWrapper .socialLinks {
   position: absolute;
-  bottom: 5%;
-  left: calc(50% - 86px);
 }
+
+.aboutMeWrapper .fa-github {
+  color: black;
+}
+
+.overlay {
+  position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+  text-align: left;
+  color: white;
+  margin: 30px;
+
+}
+
+.aboutMeWrapperIntroPage {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 60px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100% - 150px);
+  /* animation: opac 3s; */
+  /* animation: fadeIn ease 20s; */
+}
+
+/* .fade-in {
+  animation: fadeIn ease 20s;
+  -webkit-animation: fadeIn ease 20s;
+  -moz-animation: fadeIn ease 20s;
+  -o-animation: fadeIn ease 20s;
+  -ms-animation: fadeIn ease 20s;
+  }
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+} */

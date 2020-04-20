@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{"jWv+":function(e,a,t){"use strict";t.r(a);var n=t("q1tI"),r=t.n(n),l=(t("Wbzz"),t("kOA+"),t("Bl7J")),c=t("vrFN"),o=t("VR5b");t("MGXT");a.default=function(e){var a=e.location;return r.a.createElement(l.a,{location:a},r.a.createElement(c.a,{title:"Patrick Levy"}),r.a.createElement("div",null,r.a.createElement("div",{className:"overlay aboutMeWrapperIntroPage .fade-in"},r.a.createElement(o.a,null))))}}}]);
+//# sourceMappingURL=component---src-pages-about-me-js-e264d092b3abe0eb4a63.js.map

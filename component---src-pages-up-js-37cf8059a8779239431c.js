@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{GITo:function(t,e,n){"use strict";n.r(e);var a=n("q1tI"),o=n.n(a),c=(n("Wbzz"),n("kOA+"),n("Bl7J")),r=(n("tBDR"),n("vrFN"));n("G7Dd");e.default=function(t){var e=t.location;return o.a.createElement(c.a,{location:e},o.a.createElement(r.a,{title:"Home"}),"Up")}}}]);
+//# sourceMappingURL=component---src-pages-up-js-37cf8059a8779239431c.js.map

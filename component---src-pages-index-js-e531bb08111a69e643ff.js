@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{RXBc:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),c=a.n(n),r=(a("Wbzz"),a("kOA+"),a("Bl7J")),l=(a("tBDR"),a("vrFN")),o=a("G7Dd");t.default=function(e){var t=e.location;return c.a.createElement(r.a,{location:t},c.a.createElement(l.a,{title:"Patrick Levy"}),c.a.createElement(o.a,null))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-e531bb08111a69e643ff.js.map
